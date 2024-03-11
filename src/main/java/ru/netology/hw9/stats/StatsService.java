@@ -38,9 +38,10 @@ public class StatsService {
 
     public int salesBellowAverage(long[] sales) {
         int counter = 0;
-        long AverageSales = average(sales);
+        long averageSales = average(sales);
         for (long sale : sales) {
-            if (sale < AverageSales) counter++;
+            if (sale < averageSales)
+                counter++;
         }
         return counter;
     }
