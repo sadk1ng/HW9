@@ -7,6 +7,7 @@ public class Main {
         StatsService statsService = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
+
         System.out.println("Sum of sales: " + statsService.sum(sales));
         System.out.println("Average of sales: " + statsService.average(sales));
         System.out.println("Month with max sales: " + statsService.monthMaximumSale(sales));
