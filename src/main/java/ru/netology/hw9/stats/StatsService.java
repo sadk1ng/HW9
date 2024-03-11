@@ -1,6 +1,14 @@
 package ru.netology.hw9.stats;
 
 public class StatsService {
+
+    public int calculateAverage(long[]sales) {
+        long total = 0;
+        for (long sale : sales) {
+            total += sale;
+        }
+        return (int) (total / sales.length);
+    }
     public long sum(long[] sales) {
         long totalSale = 0;
         for (long sale : sales) {
@@ -50,6 +58,7 @@ public class StatsService {
 
     public int salesOverAverage(long[] sales) {
         int counter = 0;
+        long AverageSales = average(sales);
         for (long sale : sales) {
             if (sale > average(sales)) {
                 counter++;
