@@ -9,7 +9,11 @@ public class StatsService {
         return totalSale;
     }
     public long average(long[] sales) {
-        return sum(sales) / sales.length;
+        long totalSale = 0;
+        for (long sale : sales) {
+            totalSale += sale;
+        }
+        return totalSale / sales.length;
     }
 
     public int monthMaximumSale(long[] sales) {
@@ -20,7 +24,6 @@ public class StatsService {
                 monthMaximum = i;
             }
         }
-
         return monthMaximum + 1;
     }
 
@@ -32,16 +35,15 @@ public class StatsService {
                 monthMinimum = i;
             }
         }
-
         return monthMinimum + 1;
     }
 
     public int salesBellowAverage(long[] sales) {
         int counter = 0;
-        long averageSales = average(sales);
         for (long sale : sales) {
-            if (sale < averageSales)
+            if (sale < average(sales)) {
                 counter++;
+            }
         }
         return counter;
     }
